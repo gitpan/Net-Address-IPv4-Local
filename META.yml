@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Net-Address-IPv4-Local
-version: 0.10
+version: 0.11
 author:
   - Julian Mehnle <julian@mehnle.net>
 abstract: |-
@@ -13,8 +13,8 @@ requires:
 provides:
   Net::Address::IPv4::Local:
     file: lib/Net/Address/IPv4/Local.pm
-    version: 0.10
+    version: 0.11
   Net::Address::IPv4::Local::Error:
     file: lib/Net/Address/IPv4/Local.pm
-    version: 0.10
+    version: 0.11
 generated_by: Module::Build version 0.26

@@ -3,7 +3,7 @@
 # a class for discovering the local system's IP address.
 #
 # (C) 2005 Julian Mehnle <julian@mehnle.net>
-# $Id: Local.pm,v 1.2 2005/01/14 23:39:53 julian Exp $
+# $Id: Local.pm,v 1.3 2005/01/15 14:39:04 julian Exp $
 #
 ##############################################################################
 
@@ -18,11 +18,11 @@ package Net::Address::IPv4::Local;
 
 =head1 VERSION
 
-0.10
+0.11
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 =head1 SYNOPSIS
 
@@ -44,7 +44,8 @@ use Error qw(:try);
 
 use IO::Socket::INET;
 
-use constant INTERNET_REMOTE_ADDRESS => '198.41.0.4';  # a.root-servers.net
+use constant DEFAULT_REMOTE_ADDRESS => '198.41.0.4';    # a.root-servers.net
+use constant DEFAULT_REMOTE_PORT    => 53;              # DNS
 
 # Interface:
 ##############################################################################
@@ -78,7 +79,7 @@ Returns the textual representation of the local system's IP address that is
 
 sub public {
     my ($class) = @_;
-    return $class->connected_to(INTERNET_REMOTE_ADDRESS);
+    return $class->connected_to(DEFAULT_REMOTE_ADDRESS);
 }
 
 =item B<connected_to($remote_address)>: RETURNS SCALAR; THROWS
@@ -95,7 +96,7 @@ sub connected_to {
     my $socket = IO::Socket::INET->new(
         Proto       => 'udp',
         PeerAddr    => $remote_address,
-       #PeerPort    => 1
+        PeerPort    => DEFAULT_REMOTE_PORT
     );
     
     throw Net::Address::IPv4::Local::Error("Unable to create UDP socket: $!")
