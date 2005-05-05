@@ -3,7 +3,7 @@
 # a class for discovering the local system's IP address.
 #
 # (C) 2005 Julian Mehnle <julian@mehnle.net>
-# $Id: Local.pm,v 1.3 2005/01/15 14:39:04 julian Exp $
+# $Id: Local.pm,v 1.4 2005/05/05 12:57:28 julian Exp $
 #
 ##############################################################################
 
@@ -18,11 +18,11 @@ package Net::Address::IPv4::Local;
 
 =head1 VERSION
 
-0.11
+0.12
 
 =cut
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 =head1 SYNOPSIS
 

@@ -7,7 +7,8 @@ my $build = Module::Build->new(
     requires        => {
         # Core requirements:
         perl                => 0,
-        IO::Socket::INET    => 0
+        IO::Socket::INET    => 0,
+        Error               => 0
     },
     recommends      => {
     },
@@ -18,5 +19,5 @@ my $build = Module::Build->new(
 
 $build->create_build_script();
 
-# $Id: Build.PL,v 1.2 2005/01/14 22:37:27 julian Exp $
+# $Id: Build.PL,v 1.3 2005/05/05 12:59:30 julian Exp $
 # vim:tw=79
